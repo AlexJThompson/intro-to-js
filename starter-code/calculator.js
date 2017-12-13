@@ -1,7 +1,7 @@
 
 var loop = "y";
 while (loop == "y") {
-	var calcType = (prompt('which calcuator: normal, BMI'));
+	var calcType = (prompt('which calcuator: normal, BMI or Mortgage'));
 
 	if(calcType == "normal") {
 		// Calculator
@@ -50,11 +50,14 @@ while (loop == "y") {
 		var L = parseFloat(prompt("Enter your required loan amount"));
 		var c = parseFloat(prompt("Enter your monthly interest rate"));
 		var n = parseFloat(prompt("Enter the number of months in the loan"));
-		var Mortgage = (L((c(1 + c)^n)/((1 + c)^n - 1)));
+		var A = Math.pow((1 + c), n);
+		var B = A * c;
+		var C = A - 1;
+		var D = B / C;
+		var Mortgage = L * D;
 		alert("This is your Mortgage: " + Mortgage);
-	}
 	} else {
-		alert("acceptable inputs are: BMI or normal");
+		alert("acceptable inputs are: BMI, normal or mortgage");
 	}
 	loop = prompt ("Do you want to try again? y/n?")
 }
